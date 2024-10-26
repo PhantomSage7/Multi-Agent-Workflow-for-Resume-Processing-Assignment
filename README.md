@@ -17,80 +17,72 @@ The goal of this project is to automate the processing of multi-page resumes usi
 
 ---
 
+## Project Structure
+```
+project-root/
+│
+├── agents/                    # Directory containing agent scripts
+│   ├── __init__.py            # Package initializer
+│   ├── extractor.py           # Agent responsible for extracting entities
+│   ├── graph.py               # Handles monitoring with LangGraph
+│   ├── reader.py              # Agent for reading resumes
+│   ├── validator.py           # Agent for validating extracted entities
+│
+├── venv/                      # Virtual environment (not tracked by Git)
+│
+├── main.py                    # Orchestrator script for running the entire workflow
+│
+├── requirements.txt           # Required dependencies
+│
+└── resume.pdf                 # Sample resume file for testing
+```
 
+---
 
 ## Setup and Installation
 
 ### Prerequisites
 - Python 3.x
 - Git
-- Gemini API key
 
 ### Steps
 
 1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/yourusername/multi-agent-resume-processing.git
+   cd multi-agent-resume-processing
+   ```
 
-   \`\`\`bash
-
-   git clone https://github.com/PhantomSage7/Multi-Agent-Workflow-for-Resume-Processing-Assignment.git
-
-   cd Multi-Agent-Workflow-for-Resume-Processing-Assignment
-
-   \`\`\`
-
-3. **Create and Activate a Virtual Environment**
-
-   \`\`\`bash
+2. **Create and Activate a Virtual Environment**
+   ```bash
    python3 -m venv venv
-
    source venv/bin/activate   # For Linux/macOS
-
    venv\Scripts\activate    # For Windows
-   \`\`\`
-
-5. **Set up the .env file for the Gemini API key**
-
+   ```
+3. **Set up the .env file for the Gemini API key**
    - In the project root, create a \`.env\` file and add your Gemini API key with the following format:
-     \`\`\`bash
+     ```bash
      GEMINI_API_KEY=your_gemini_api_key_here
-     \`\`\`
+     ```
 
-7. **Install Dependencies**
-
-   \`\`\`bash
-
+4. **Install Dependencies**
+   ```bash
    pip install -r requirements.txt
+   ```
 
-   \`\`\`
-
-9. **Run the Application**
-
-   \`\`\`bash
-
+5. **Run the Application**
+   ```bash
    python main.py
-
-   \`\`\`
+   ```
 
 ---
 
 ## How It Works
 
 ### Agents
-- **Resume Reader Agent (reader.py)**: Reads and processes multi-page resumes, transforming them into a structured format ready for further processing.
-- **Extractor Agent (extractor.py)**: Extracts key entities such as name, contact info, education, and work experience. It also uses the **Gemini API** for enhanced entity extraction. The API key must be provided via the \`.env\` file and accessed within the \`extractor.py\` script using the \`GEMINI_API_KEY\` environment variable.
-  
-  Example usage in \`extractor.py\`:
-  \`\`\`python
-  import os
-  from dotenv import load_dotenv
-
-  load_dotenv()
-
-  GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-  # Use GEMINI_API_KEY in API calls
-  \`\`\`
-
-- **Validator Agent (validator.py)**: Checks the extracted data for accuracy and completeness, flagging any issues that need correction.
+- **Resume Reader Agent (`reader.py`)**: Reads and processes multi-page resumes, transforming them into a structured format ready for further processing.
+- **Extractor Agent (`extractor.py`)**: Extracts key entities such as name, contact info, education, and work experience.
+- **Validator Agent (`validator.py`)**: Checks the extracted data for accuracy and completeness, flagging any issues that need correction.
 
 ### Workflow
 1. **Human Feedback**: At each step, the system can pause and request feedback from users to correct or enhance the process.
@@ -125,7 +117,7 @@ The system leverages LangGraph and LangSmith for monitoring and visualizing each
 
 ## Sample Output
 A JSON file containing the extracted and validated resume data will be generated. Here is an example of the expected structure:
-\`\`\`json
+```json
 {
   "name": "John Doe",
   "contact": {
@@ -148,7 +140,7 @@ A JSON file containing the extracted and validated resume data will be generated
   ],
   "skills": ["Python", "Machine Learning", "Data Analysis"]
 }
-\`\`\`
+```
 
 ---
 
@@ -158,7 +150,6 @@ A JSON file containing the extracted and validated resume data will be generated
 - **User Interface**: The system can be extended to include a CLI or a simple GUI for user interaction.
 
 ---
-
 
 ## Monitoring Setup
 
@@ -174,8 +165,6 @@ A JSON file containing the extracted and validated resume data will be generated
 - [Python Code Style Guidelines (PEP 8)](https://pep8.org/)
 
 ---
-## Screenchot
-![image](https://github.com/user-attachments/assets/f923df58-2c61-4918-a2cf-d58bb2e98d19)
 
 ## Conclusion
 This project demonstrates the use of a multi-agent workflow for resume processing powered by LLMs, with a strong focus on modularity, scalability, and real-time human intervention. The monitoring tools ensure full transparency in the system’s operations, enabling both debugging and optimization.
