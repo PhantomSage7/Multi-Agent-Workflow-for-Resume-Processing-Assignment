@@ -17,27 +17,7 @@ The goal of this project is to automate the processing of multi-page resumes usi
 
 ---
 
-## Project Structure
-\`\`\`
-project-root/
-│
-├── agents/                    # Directory containing agent scripts
-│   ├── __init__.py            # Package initializer
-│   ├── extractor.py           # Agent responsible for extracting entities
-│   ├── graph.py               # Handles monitoring with LangGraph
-│   ├── reader.py              # Agent for reading resumes
-│   ├── validator.py           # Agent for validating extracted entities
-│
-├── venv/                      # Virtual environment (not tracked by Git)
-│
-├── main.py                    # Orchestrator script for running the entire workflow
-│
-├── requirements.txt           # Required dependencies
-│
-└── resume.pdf                 # Sample resume file for testing
-\`\`\`
 
----
 
 ## Setup and Installation
 
@@ -51,7 +31,9 @@ project-root/
 1. **Clone the Repository**
 
    \`\`\`bash
+
    git clone https://github.com/PhantomSage7/Multi-Agent-Workflow-for-Resume-Processing-Assignment.git
+
    cd Multi-Agent-Workflow-for-Resume-Processing-Assignment
 
    \`\`\`
@@ -60,7 +42,9 @@ project-root/
 
    \`\`\`bash
    python3 -m venv venv
+
    source venv/bin/activate   # For Linux/macOS
+
    venv\Scripts\activate    # For Windows
    \`\`\`
 
@@ -74,13 +58,17 @@ project-root/
 7. **Install Dependencies**
 
    \`\`\`bash
+
    pip install -r requirements.txt
+
    \`\`\`
 
 9. **Run the Application**
 
    \`\`\`bash
+
    python main.py
+
    \`\`\`
 
 ---
