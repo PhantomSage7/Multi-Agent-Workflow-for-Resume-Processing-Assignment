@@ -49,31 +49,36 @@ project-root/
 ### Steps
 
 1. **Clone the Repository**
+
    \`\`\`bash
    git clone https://github.com/PhantomSage7/Multi-Agent-Workflow-for-Resume-Processing-Assignment.git
    cd Multi-Agent-Workflow-for-Resume-Processing-Assignment
 
    \`\`\`
 
-2. **Create and Activate a Virtual Environment**
+3. **Create and Activate a Virtual Environment**
+
    \`\`\`bash
    python3 -m venv venv
    source venv/bin/activate   # For Linux/macOS
    venv\Scripts\activate    # For Windows
    \`\`\`
 
-3. **Set up the .env file for the Gemini API key**
+5. **Set up the .env file for the Gemini API key**
+
    - In the project root, create a \`.env\` file and add your Gemini API key with the following format:
      \`\`\`bash
      GEMINI_API_KEY=your_gemini_api_key_here
      \`\`\`
 
-4. **Install Dependencies**
+7. **Install Dependencies**
+
    \`\`\`bash
    pip install -r requirements.txt
    \`\`\`
 
-5. **Run the Application**
+9. **Run the Application**
+
    \`\`\`bash
    python main.py
    \`\`\`
@@ -181,6 +186,8 @@ A JSON file containing the extracted and validated resume data will be generated
 - [Python Code Style Guidelines (PEP 8)](https://pep8.org/)
 
 ---
+## Screenchot
+![image](https://github.com/user-attachments/assets/f923df58-2c61-4918-a2cf-d58bb2e98d19)
 
 ## Conclusion
 This project demonstrates the use of a multi-agent workflow for resume processing powered by LLMs, with a strong focus on modularity, scalability, and real-time human intervention. The monitoring tools ensure full transparency in the system’s operations, enabling both debugging and optimization.
