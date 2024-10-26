@@ -49,8 +49,8 @@ project-root/
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/multi-agent-resume-processing.git
-   cd multi-agent-resume-processing
+   https://github.com/PhantomSage7/Multi-Agent-Workflow-for-Resume-Processing-Assignment.git
+   cd Multi-Agent-Workflow-for-Resume-Processing-Assignment
    ```
 
 2. **Create and Activate a Virtual Environment**
