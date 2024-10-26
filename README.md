@@ -165,6 +165,8 @@ A JSON file containing the extracted and validated resume data will be generated
 - [Python Code Style Guidelines (PEP 8)](https://pep8.org/)
 
 ---
+## Screenshots
+![image](https://github.com/user-attachments/assets/43be3939-a0b4-4808-b6c1-7f2d5b37808d)
 
 ## Conclusion
 This project demonstrates the use of a multi-agent workflow for resume processing powered by LLMs, with a strong focus on modularity, scalability, and real-time human intervention. The monitoring tools ensure full transparency in the system’s operations, enabling both debugging and optimization.
